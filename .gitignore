@@ -1,0 +1,9 @@
+# directory
+asm/
+obj/
+bin/
+
+# vim tmp file
+*~
+*.swp
+*.swo
