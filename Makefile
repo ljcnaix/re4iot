@@ -21,42 +21,42 @@ $(DIR_ASM)/x86/%.s : $(DIR_SRC)/%.c
 $(DIR_OBJ)/x86/%.o : $(DIR_SRC)/%.c
 	$(CC) -m32 -g -c $< -o $@
 $(DIR_BIN)/x86/% : $(DIR_SRC)/%.c
-	$(CC) -m32 -g $< -o $@
+	$(CC) -m32 -g $< -o $@ -static
 
 $(DIR_ASM)/x64/%.s : $(DIR_SRC)/%.c
 	$(CC) -S $< -o $@
 $(DIR_OBJ)/x64/%.o : $(DIR_SRC)/%.c
 	$(CC) -g -c $< -o $@
 $(DIR_BIN)/x64/% : $(DIR_SRC)/%.c
-	$(CC) -g $< -o $@
+	$(CC) -g $< -o $@ -static
 
 $(DIR_ASM)/arm/%.s : $(DIR_SRC)/%.c
 	$(CC)-arm -S $< -o $@
 $(DIR_OBJ)/arm/%.o : $(DIR_SRC)/%.c
 	$(CC)-arm -g -c $< -o $@
 $(DIR_BIN)/arm/% : $(DIR_SRC)/%.c
-	$(CC)-arm -g $< -o $@
+	$(CC)-arm -g $< -o $@ -static
 
 $(DIR_ASM)/arm64/%.s : $(DIR_SRC)/%.c
 	$(CC)-arm64 -S $< -o $@
 $(DIR_OBJ)/arm64/%.o : $(DIR_SRC)/%.c
 	$(CC)-arm64 -g -c $< -o $@
 $(DIR_BIN)/arm64/% : $(DIR_SRC)/%.c
-	$(CC)-arm64 -g $< -o $@
+	$(CC)-arm64 -g $< -o $@ -static
 
 $(DIR_ASM)/mips/%.s : $(DIR_SRC)/%.c
 	$(CC)-mips -S $< -o $@
 $(DIR_OBJ)/mips/%.o : $(DIR_SRC)/%.c
 	$(CC)-mips -g -c $< -o $@
 $(DIR_BIN)/mips/% : $(DIR_SRC)/%.c
-	$(CC)-mips -g $< -o $@
+	$(CC)-mips -g $< -o $@ -static
 
 $(DIR_ASM)/ppc/%.s : $(DIR_SRC)/%.c
 	$(CC)-ppc -S $< -o $@
 $(DIR_OBJ)/ppc/%.o : $(DIR_SRC)/%.c
 	$(CC)-ppc -g -c $< -o $@
 $(DIR_BIN)/ppc/% : $(DIR_SRC)/%.c
-	$(CC)-ppc -g $< -o $@
+	$(CC)-ppc -g $< -o $@ -static
 
 .PHONY: clean
 clean:
