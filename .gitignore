@@ -2,6 +2,8 @@
 asm/
 obj/
 bin/
+tools/downloads
+tools/cross-compiler-*/
 
 # vim tmp file
 *~
@@ -10,3 +12,4 @@ bin/
 
 # gdb
 .gdb*
+
